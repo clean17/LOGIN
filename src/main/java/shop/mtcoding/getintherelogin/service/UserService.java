@@ -5,6 +5,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import shop.mtcoding.getintherelogin.dto.user.UserReq.UserJoinReqDto;
+import shop.mtcoding.getintherelogin.handler.exception.CustomException;
 import shop.mtcoding.getintherelogin.model.User;
 import shop.mtcoding.getintherelogin.model.UserRepository;
 
@@ -19,7 +20,7 @@ public class UserService {
         try {
             userRepository.insert(uDto);
         } catch (Exception e) {
-            System.out.println("테스트 : 서비스 터짐");            // TODO: handle exception
+            throw new CustomException("회원가입 실패");
         }
         return userRepository.findByEmail(uDto.getEmail());
     }

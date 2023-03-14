@@ -5,7 +5,7 @@
 
 <mapper namespace="shop.mtcoding.getintherelogin.model.UserRepository">
     <select id="findByEmail" resultType="shop.mtcoding.getintherelogin.model.User">
-        select * from user_tb where email = #{email}
+      select * from user_tb where email = #{email}
     </select>
 
     <insert id="insert">

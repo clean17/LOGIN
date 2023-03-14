@@ -8,7 +8,8 @@ import shop.mtcoding.getintherelogin.dto.user.UserReq.UserJoinReqDto;
 @Mapper
 public interface UserRepository {
     public User findByEmail(
-        @Param("email") String email);
+        @Param("email") String email
+    );
 
     public int insert(
         @Param("uDto") UserJoinReqDto uDto

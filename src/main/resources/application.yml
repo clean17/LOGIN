@@ -35,3 +35,9 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/**.xml
+  configuration:
+    map-underscore-to-camel-case: true
