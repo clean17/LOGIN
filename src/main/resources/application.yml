@@ -14,8 +14,8 @@ spring:
     password: 
   mvc:
     view:
-      prefix: /WEB-INF/view/
-      suffix: .jsp    
+      prefix: /templates/
+      suffix: .mustache
   sql:
     init:
       schema-locations:
@@ -35,7 +35,10 @@ spring:
     hibernate:
       ddl-auto: create
     show-sql: true
-
+  # 머스태치 사용할때 세션에 접근하게 해줌
+  mustache: 
+    servlet:
+      expose-session-attributes: true
 mybatis:
   mapper-locations:
     - classpath:mapper/**.xml

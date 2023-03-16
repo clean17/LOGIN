@@ -10,6 +10,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 
 import shop.mtcoding.getintherelogin.dto.TokenProperties;
 import shop.mtcoding.getintherelogin.handler.exception.CustomException;
@@ -19,6 +20,7 @@ public class Fetch<T> {
         // 4. 토큰 파싱
         T t ;
         try {
+            // om.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
             t = om.readValue(responseBody, clazz);
         } catch (Exception e) {
             throw new CustomException("파싱 실패");
